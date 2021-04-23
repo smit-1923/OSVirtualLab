@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Replacement - Explanation</title>
+    <link rel="stylesheet" type="text/css" href="./../css/newstyle.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body style="scroll-behavior: smooth; text-decoration: none; outline: none;">
+    <div id="particles-js">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="./../index.html" style="font-size: 20px; font-weight: 550;">Home</a>
+            <a class="navbar-brand ml-auto" href="simulation.html" style="font-size: 20px; font-weight: 550;">Simulation</a>
+            <a class="navbar-brand" href="graphs.html" style="font-size: 20px; font-weight: 550;">Graphs</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <br>
+
+        <div class="title">
+            <h1 class="mb-5">CONCEPTS - PAGE REPLACEMENT</h1>
+            <div class="btn col-md-8">
+                <a class="btn btn-outline-primary col-md-4" href="simulation.html">Simulation</a>
+                <a class="btn btn-outline-primary col-md-4" href="graphs.html">Graphs</a>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <div class="container">
+        <h1 class="display-3 text-dark font-weight-bold text-align-center" style="font-family: 'Roboto', sans-serif;">Page Replacement Algorithm</h1>
+        <hr class="my-4">
+        <p style="font-size: 18px; font-weight: 550; color: #555;">The page replacement algorithm decides which memory page is to be replaced. The process of replacement is sometimes called swap out or write to disk. Page replacement is done when the requested page is not found in the main memory (page fault).</p>
+
+        <p style="font-size: 18px; font-weight: 550; color: #555;">When a page fault occurs, the operating system has to choose a page to remove from memory to make room for the page that has to be brought in. The page replacement is done by swapping the required pages from backup storage to main memory and vice-versa.
+            If the page to be removed has been modified while in memory, it must be rewritten to the disk to bring the disk copy up to date. If, however, the page has not been changed (e.g., it contains program text), the disk copy is already up to date,
+            so no rewrite is needed. The page to be read in just overwrites the page being evicted. A page replacement algorithm is evaluated by running the particular algorithm on a string of memory references and compute the page faults.Referenced string
+            is a sequence of pages being referenced. Page fault is not an error. Contrary to what their name might suggest, page faults are not errors and are common and necessary to increase the amount of memory available to programs in any operating
+            system that utilizes virtual memory, including Microsoft Windows, Mac OS X, Linux and Unix.</p>
+
+        <p style="font-size: 18px; font-weight: 550; color: #555;">Each operating system uses different page replacement algorithms. To select the particular algorithm, the algorithm with lowest page fault rate is considered. <br> 1.First-In First-Out page replacement (FIFO) <br> 2.Least recently used page replacement
+            (LRU) <br> 3.Optimal page replacement algorithm <br>
+        </p>
+
+        <hr class="my-4">
+
+        <hr class="my-4">
+
+        <h2 class="dispthelay-3 text-dark font-weight-bold" style="font-family: 'Roboto', sans-serif;">First In First Out (FIFO)</h2>
+        <hr class="my-4">
+        <p style="font-size: 18px; font-weight: 550; color: #555;">This is the simplest page replacement algorithm. In this algorithm, the operating system keeps track of all pages in the memory in a queue, the oldest page is in the front of the queue. When a page needs to be replaced page in the front of the
+            queue is selected for removal.</p>
+        <p class="text-dark font-weight-bold" style="font-size: 20px;"><span>>></span> Example : Consider page reference string 1, 3, 0, 3, 5, 6 with 3 page frames. Find number of page faults.</p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190412160604/fifo2.png"><br><br>
+        <p>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Initially all slots are empty, so when 1, 3, 0 came they are allocated to the empty slots —> 3 Page Faults.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">When 3 comes, it is already in memory so —> 0 Page Faults.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Then 5 comes, it is not available in memory so it replaces the oldest page slot i.e 1. —>1 Page Fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">6 comes, it is also not available in memory so it replaces the oldest page slot i.e 3 —>1 Page Fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Finally when 3 come it is not avilable so it replaces 0 1 page fault.</li>
+        </p>
+
+        <hr class="my-4">
+
+        <hr class="my-4">
+
+        <h2 class="dispthelay-3 text-dark font-weight-bold" style="font-family: 'Roboto', sans-serif;">Least Recently Used (LRU)</h2>
+        <hr class="my-4">
+        <p style="font-size: 18px; font-weight: 550; color: #555;">In the Least Recently Used (LRU) page replacement policy, the page that is used least recently will be replaced.</p>
+        <p class="text-dark font-weight-bold" style="font-size: 20px;"><span>>></span> Example : Consider the page reference string 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2 with 4 page frames.Find number of page faults.</p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190412161533/optimal2.png"><br><br>
+        <p>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Initially all slots are empty, so when 7 0 1 2 are allocated to the empty slots —> 4 Page faults.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">0 is already their so —> 0 Page fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">When 3 came it will take the place of 7 because it is least recently used —>1 Page fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">4 will takes place of 1 —> 1 Page Fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Now for the further page reference string —> 0 Page fault because they are already available in the memory.</li>
+        </p>
+
+        <hr class="my-4">
+
+        <hr class="my-4">
+
+        <h2 class="dispthelay-3 text-dark font-weight-bold" style="font-family: 'Roboto', sans-serif;">Optimal (OPT)</h2>
+        <hr class="my-4">
+        <p style="font-size: 18px; font-weight: 550; color: #555;">In this algorithm, pages are replaced which would not be used for the longest duration of time in the future.</p>
+        <p class="text-dark font-weight-bold" style="font-size: 20px;"><span>>></span> Example : Consider the page references 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, with 4 page frame. Find number of page fault.</p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190412160500/optimal.png"><br><br>
+        <p>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Initially all slots are empty, so when 7 0 1 2 are allocated to the empty slots —> 4 Page faults.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">0 is already their so —> 0 Page fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">When 3 came it will take the place of 7 because it is not used for the longest duration of time in the future.—>1 Page fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">0 is already there so —> 0 Page fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">4 will takes place of 1 —> 1 Page Fault.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Now for the further page reference string —> 0 Page fault because they are already available in the memory.</li>
+        </p><br>
+        <p style="font-size: 18px; font-weight: 550; color: #555;"><span class="text-danger font-weight-bold">NOTE :</span> Optimal page replacement is perfect, but not possible in practice as the operating system cannot know future requests. The use of Optimal Page replacement is to set up a benchmark so that
+            other replacement algorithms can be analyzed against it.</p>
+
+        <hr class="my-4">
+
+        <hr class="my-4">
+
+        <h2 class="dispthelay-3 text-dark font-weight-bold" style="font-family: 'Roboto', sans-serif;">Belady's Anomaly</h2>
+        <hr class="my-4">
+        <p style="font-size: 18px; font-weight: 550; color: #555;">Belady’s Anomaly is the phenomenon of increasing the number of page faults on increasing the number of frames in main memory.</p><br>
+        <p><span class="text-dark font-weight-bold" style="font-size: 20px;">Reason Behind Belady’s Anomaly :</span><br>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">An algorithm suffers from Belady’s Anomaly if and only if it does not follow stack property.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Algorithms that follow stack property are called as stack based algorithms.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Stack based algorithms do not suffer from Belady’s Anomaly.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">This is because these algorithms assign priority to a page for replacement that is independent of the number of frames in the main memory.</li>
+        </p>
+
+        <p style="font-size: 18px; font-weight: 550; color: #555;">LRU Page Replacement Algorithm and Optimal Page Replacement Algorithm are stack based algorithms. Hence, they do not suffer from Belady’s Anomaly.</p><br>
+
+        <p><span class="text-dark font-weight-bold" style="font-size: 20px;">Stack Property :</span><br>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Consider - Initially, we had ‘m’ number of frames in the main memory.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">Now, the number of frames in the main memory is increased to ‘m+1’.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">According to stack property, At each stage, the set of pages that were present in the main memory when number of frames is ‘m’ will be compulsorily present in the corresponding stages in main memory when the number of frames is increased to
+                ‘m+1’.</li>
+        </p>
+        <br>
+        <!---------------------------------------------------------------- OPT ---------------------------------------------------------------------------->
+
+        <p class="text-success font-weight-bold" style="font-size: 20px;"><span>>></span> Example : For Optimal Page Replacement Algorithm, Consider the reference string 0, 1, 2, 3, 0, 1, 4, 0, 1, 2, 3, 4.</p><br>
+        <p class="font-weight-bold" style="font-size: 18px; font-weight: 550; color: #555;">Case-1 : When frame size = 3<br><br>
+            <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/Beladys-Anomaly-Optimal-Page-Replacement-Algorithm-Case-1.png" class="img-1">
+            <p class="text-center" style="font-size: 18px; font-weight: 550; color: #555;">Number of page faults = 7</p>
+        </p>
+        <br>
+        <p class="font-weight-bold" style="font-size: 18px; font-weight: 550; color: #555;">Case-2 : When frame size = 4<br><br>
+            <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/Beladys-Anomaly-Optimal-Page-Replacement-Algorithm-Case-2.png" class="img-1">
+            <p class="text-center" style="font-size: 18px; font-weight: 550; color: #555;">Number of page faults = 6</p>
+        </p>
+        <br>
+
+        <p class="text-dark font-weight-bold" style="font-size: 20px;">From here, we can observe : <br>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">At all the stages in case-2, main memory compulsorily contains the set of pages that are present in the corresponding stages in case-1.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">Thus, optimal page replacement algorithm follows the stack property.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">Hence, it does not suffer from Belady’s Anomaly.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">As a proof, number of page faults decrease when the number of frames is increased from 3 to 4.</li>
+        </p><br>
+
+        <p style="font-size: 18px; font-weight: 550; color: #555;">So, from this above example you understood that Optimal Page Replacement Algorithm doesn't suffer Belady's Anomaly Algorithm.</p><br>
+
+        <!---------------------------------------------------------------- LRU ---------------------------------------------------------------------------->
+
+        <p class="text-success font-weight-bold" style="font-size: 20px;"><span>>></span> Example : For LRU Page Replacement Algorithm, Consider the reference string 0, 1, 2, 3, 0, 1, 4, 0, 1, 2, 3, 4.</p><br>
+        <p class="font-weight-bold" style="font-size: 18px; font-weight: 550; color: #555;">Case-1 : When frame size = 3<br><br>
+            <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/Beladys-Anomaly-LRU-Page-Replacement-Algorithm-Case-1.png">
+            <p class="text-center" style="font-size: 18px; font-weight: 550; color: #555;">Number of page faults = 10</p>
+        </p>
+        <br>
+        <p class="font-weight-bold" style="font-size: 18px; font-weight: 550; color: #555;">Case-2 : When frame size = 4<br><br>
+            <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/Beladys-Anomaly-LRU-Page-Replacement-Algorithm-Case-2.png">
+            <p class="text-center" style="font-size: 18px; font-weight: 550; color: #555;">Number of page faults = 8</p>
+        </p>
+        <br>
+
+        <p class="text-dark font-weight-bold" style="font-size: 20px;">From here, we can observe : <br>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">At all the stages in case-2, main memory compulsorily contains the set of pages that are present in the corresponding stages in case-1.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">Thus, LRU page replacement algorithm follows the stack property.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">Hence, it does not suffer from Belady’s Anomaly.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">As a proof, number of page faults decrease when the number of frames is increased from 3 to 4.</li>
+        </p><br>
+
+        <p style="font-size: 18px; font-weight: 550; color: #555;">So, from this above example you understood that LRU Page Replacement Algorithm doesn't suffer Belady's Anomaly Algorithm.</p><br>
+
+        <!---------------------------------------------------------------- FIFO ---------------------------------------------------------------------------->
+
+        <p class="text-success font-weight-bold" style="font-size: 20px;"><span>>></span> Example : For FIFO Page Replacement Algorithm, Consider the reference string 0, 1, 2, 3, 0, 1, 4, 0, 1, 2, 3, 4.</p><br>
+        <p class="font-weight-bold" style="font-size: 18px; font-weight: 550; color: #555;">Case-1 : When frame size = 3<br><br>
+            <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/Beladys-Anomaly-FIFO-Page-Replacement-Algorithm-Case-1.png">
+            <p class="text-center" style="font-size: 18px; font-weight: 550; color: #555;">Number of page faults = 9</p>
+        </p>
+        <br>
+        <p class="font-weight-bold" style="font-size: 18px; font-weight: 550; color: #555;">Case-2 : When frame size = 4<br><br>
+            <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/Beladys-Anomaly-FIFO-Page-Replacement-Algorithm-Case-2.png">
+            <p class="text-center" style="font-size: 18px; font-weight: 550; color: #555;">Number of page faults = 10</p>
+        </p>
+        <br>
+
+        <p class="text-dark font-weight-bold" style="font-size: 20px;">From here, we can observe : <br>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">At stage-7 and stage-8 in case-2, main memory does not contain the set of pages that are present in the corresponding stages in case-1.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">Thus, FIFO page replacement algorithm does not follow the stack property.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">Hence, it suffers from Belady’s Anomaly.</li>
+            <li style="font-size: 17px; font-weight: 550; color: #555;">As a proof, number of page faults increase when the number of frames is increased from 3 to 4.</li>
+        </p><br>
+
+        <p class="text-danger font-weight-bold" style="font-size: 20px;">Note:
+            <li style="font-size: 18px; font-weight: 550; color: #555;">In the above example,FIFO Page Replacement Algorithm suffers from Belady’s Anomaly.</li>
+            <li style="font-size: 18px; font-weight: 550; color: #555;">It would be wrong to say that “FIFO Page Replacement Algorithm always suffer from Belady’s Anomaly”.</li>
+        </p>
+    </div>
+
+    <script src="./../JS/particles.js"></script>
+    <script src="./../JS/app.js"></script>
+</body>
+
+</html>

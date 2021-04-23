@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: Open Sans; */
+  font-family: "Roboto", sans-serif;
+}
+
+#particles-js {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url("https://www.cypherium.io/wp-content/uploads/2020/07/Home-Banner-Image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.title {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  color: #fff;
+}
+.title h1 {
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+}
+.title h1:hover {
+  color: #007cba;
+  transition: color 0.2s;
+}
+.btn {
+  position: absolute;
+  left: 8%;
+}
+.btn a {
+  margin: 0 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+}

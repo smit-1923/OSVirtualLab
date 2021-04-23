@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Replacement - Graph</title>
+        <link rel="stylesheet" type="text/css" href="./../css/style4.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+    </head>
+
+    <body style="scroll-behavior: smooth">
+        <div id="particles-js">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a
+                    class="navbar-brand"
+                    href="./../index.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Home</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="explanation.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Concepts</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="simulation.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Simulation</a
+                >
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarColor01"
+                    aria-controls="navbarColor01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+
+            <div class="title">
+                <h1 class="mb-5">GRAPHS - PAGE REPLACEMENT</h1>
+                <div class="btn col-md-8">
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="explanation.html"
+                        >Concepts</a
+                    >
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="simulation.html"
+                        >Simulation</a
+                    >
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="container">
+            <form action="action.php" method="GET">
+                <label for="nFrames">Number Of Frames : </label>
+                <input
+                    type="number"
+                    id="nFrames"
+                    name="frames"
+                    class="input-1"
+                />
+                <br />
+
+                <label for="inputs" class="label-1">Order of pages :</label>
+                <input type="text" id="inputs" name="in" class="input-1" />
+                <br />
+            </form>
+            <br />
+            <br />
+            <div class="button col-md-6">
+                <button
+                    class="btn bg-primary text-white col-md-4 mr-5"
+                    onclick="line()"
+                >
+                    Line-Graph</button
+                ><br />
+                <button
+                    class="btn bg-primary text-white col-md-4"
+                    onclick="bar()"
+                >
+                    Bar-Graph
+                </button>
+            </div>
+
+            <div
+                class="loading-screen"
+                id="loading-screen"
+                style="display: none"
+            ></div>
+
+            <div class="myDiv" id="myDiv"></div>
+        </div>
+
+        <script src="./../JS/particles.js"></script>
+        <script src="./../JS/app.js"></script>
+        <script src="script4.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </body>
+</html>

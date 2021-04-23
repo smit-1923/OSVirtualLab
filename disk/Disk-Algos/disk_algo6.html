@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C-Look - Implementation</title>
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./../Disk-Algos CSS/disk_algo.css"
+        />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+
+        <link
+            href="//fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="./../Disk-Algos JS/disk_algo6.js"></script>
+    </head>
+
+    <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+        <div id="particles-js">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a
+                    class="navbar-brand"
+                    href="./../../index.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Home</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="index_Disk.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Algorithms</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="diskGraph.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Graph</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://geektech1717.blogspot.com/2020/06/c-look-disk-scheduling-algorithm.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://www.youtube.com/watch?v=gwCgG5ORXW8&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=80"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarColor01"
+                    aria-controls="navbarColor01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <br />
+
+            <div class="title">
+                <h1 class="mb-5">
+                    Implementation Of Circular-Look (C-LOOK) Algorithm
+                </h1>
+                <div class="btn col-md-8">
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="algo6.html"
+                        >Concept</a
+                    >
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="pageContainer">
+            <h1 class="page-title">C-Look Algorithm</h1>
+            <div class="inputs">
+                <div class="number-input">
+                    <label for="numbers"
+                        >Input Queue (separated with space):
+                    </label>
+                    <button
+                        onclick="autoGenerate();"
+                        type="submit"
+                        class="btn btn-primary auto-generate"
+                    >
+                        Auto Generate
+                    </button>
+                    <input
+                        type="text"
+                        name="numbers"
+                        id="inputNumbers"
+                        class="form-control"
+                        placeholder='Eg: "82 170 43 140 24 16 190"'
+                    />
+                    <br />
+                </div>
+                <div class="start-input">
+                    <div>
+                        <label for="numbers"
+                            >Current position of Read/Write Head:
+                        </label>
+                        <input
+                            type="text"
+                            name="numbers"
+                            id="inputHeadPos"
+                            class="form-control"
+                            placeholder="50"
+                        />
+
+                        <select class="selectpicker" id="userInputDirection">
+                            <option value="null">Select Direction</option>
+                            <option value="right">Right</option>
+                            <option value="left">Left</option>
+                        </select>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="btnVisualizeContainer">
+                        <button
+                            onclick="Calculate();"
+                            id="btnVisualize"
+                            type="button"
+                            class="btn btn-lg btn-primary"
+                        >
+                            Calculate
+                        </button>
+                    </div>
+                    <br />
+                </div>
+                <div id="errorMessage"></div>
+                <br />
+            </div>
+            <div class="canvas">
+                <canvas id="line-chart"></canvas>
+                <button type="submit" class="btn btn-primary print printChart">
+                    Download Chart
+                </button>
+            </div>
+            <div id="count-output"></div>
+        </div>
+        <!-- Template JavaScript -->
+        <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+        <script src="assets/js/theme-change.js"></script>
+
+        <script src="assets/js/owl.carousel.js"></script>
+
+        <!-- disable body scroll which navbar is in active -->
+        <script>
+            $(function () {
+                $('.navbar-toggler').click(function () {
+                    $('body').toggleClass('noscroll');
+                });
+            });
+        </script>
+        <!-- disable body scroll which navbar is in active -->
+
+        <!--/MENU-JS-->
+        <script>
+            $(window).on('scroll', function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 80) {
+                    $('#site-header').addClass('nav-fixed');
+                } else {
+                    $('#site-header').removeClass('nav-fixed');
+                }
+            });
+
+            //Main navigation Active Class Add Remove
+            $('.navbar-toggler').on('click', function () {
+                $('header').toggleClass('active');
+            });
+            $(document).on('ready', function () {
+                if ($(window).width() > 991) {
+                    $('header').removeClass('active');
+                }
+                $(window).on('resize', function () {
+                    if ($(window).width() > 991) {
+                        $('header').removeClass('active');
+                    }
+                });
+            });
+        </script>
+        <!--//MENU-JS-->
+
+        <script src="assets/js/bootstrap.min.js"></script>
+        <div class="container">
+            <script src="./../../JS/particles.js"></script>
+            <script src="./../../JS/app.js"></script>
+
+            <!--For Printing Chart-->
+            <script src="https://cdn.jsdelivr.net/npm/jspdf@1.5.3/dist/jspdf.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        </div>
+    </body>
+</html>

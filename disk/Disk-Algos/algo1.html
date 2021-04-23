@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Come First Serve (FCFS) - Explanation</title>
+        <link rel="stylesheet" type="text/css" href="./../../css/style2.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+        <div id="particles-js">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a
+                    class="navbar-brand"
+                    href="./../../index.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Home</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="index_Disk.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Algorithms</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="diskGraph.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Graph</a
+                >
+                <a
+                    class="navbar-brand ml-auto" target="_blank"
+                    href="https://geektech1717.blogspot.com/2020/04/first-come-first-serve-scheduling.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto" target="_blank"
+                    href="https://www.youtube.com/watch?v=yP89YlEGCqA&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=75"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
+            </nav>
+
+            <div class="title">
+                <h1 class="mb-5">CONCEPT - First Come First Serve (FCFS)</h1>
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/Ky1jW1SraA4?start=47&end=172" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="btn col-md-8">
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="disk_algo1.html"
+                        >Algorithm</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <div class="container">
+
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 ">
+                                <img src="./../assets/images/fcfs.jpg" alt="" class="radius-image img-fluid">
+                            </div>
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big">First Come First Serve(FCFS)</h3>
+                                <p class="mt-3">FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are addressed in the order they arrive in the disk queue.Let us understand this with the help of an example.</p>
+                                <ul class="w3l-lists mt-4">
+            
+                                    <h3 class="title-small"> Advantages: </h3>
+                                    <li><span class="fa fa-check" aria-hidden="true"></span>Every request gets a fair chance </li>
+                                    <li><span class="fa fa-check" aria-hidden="true"></span>No indefinite postponement</li>
+            
+                                    <h3 class="title-small"> DisAdvantages: </h3>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>Does not try to optimize seek time</li>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>May not provide the best possible service</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <h1
+                class="display-3 text-dark font-weight-bold text-align-center"
+                style="font-family: 'Roboto', sans-serif"
+            >
+                Example:
+            </h1>
+            <hr class="my-4">
+
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                Suppose the order of request is- (82,170,43,140,24,16,190)
+                <br>
+                And current position of Read/Write head is : 50
+            </p>
+            <img
+                src="https://media.geeksforgeeks.org/wp-content/uploads/20200608201201/fcfs3.jpg"
+            />
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                So, total seek time: =
+                (82-50)+(170-82)+(170-43)+(140-43)+(140-24)+(24-16)+(190-16) =
+                642
+            </p>
+            <br>
+        </div>
+        <script src="./../../JS/particles.js"></script>
+        <script src="./../../JS/app.js"></script>
+    </body>
+</html>

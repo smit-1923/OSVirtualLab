@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Replacement - Simulation</title>
+        <link rel="stylesheet" type="text/css" href="./../css/style3.css" />
+        <link rel="stylesheet" type="text/css" href="./../css/stylee1.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+        <div id="particles-js">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a
+                    class="navbar-brand"
+                    href="./../index.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Home</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="explanation.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Concepts</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="graphs.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Graphs</a
+                >
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarColor01"
+                    aria-controls="navbarColor01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <br />
+
+            <div class="title">
+                <h1 class="mb-5">SIMULATION - PAGE REPLACEMENT</h1>
+                <div class="btn col-md-8">
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="explanation.html"
+                        >Concepts</a
+                    >
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="graphs.html"
+                        >Graphs</a
+                    >
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="body">
+            <div class="body-title">
+                <h2>Page Replacement Algorithm</h2>
+            </div>
+
+            <div class="center">
+                <span>Algorithm :</span>
+                <select class="select" id="select">
+                    <option></option>
+                    <option value="First in first Out (FIFO)">
+                        First in first Out (FIFO)
+                    </option>
+                    <option value="Least Recently Used (LRU)">
+                        Least Recently Used (LRU)
+                    </option>
+                    <option value="Optimal (OPT)">Optimal (OPT)</option>
+                </select>
+
+                <form action="action.php" method="GET">
+                    <label for="nFrames">Number of frames :</label>
+                    <input type="number" id="nFrames" name="frames" />
+                    <br />
+
+                    <label for="inputs" class="label-1"
+                        >Order of pages :
+                    </label>
+                    <input type="text" id="inputs" name="in" class="input-1" />
+                    <br />
+                    <br />
+                </form>
+            </div>
+
+            <button class="btn1" value="Submit" onClick="submit()">
+                Submit
+            </button>
+            <button class="btn2" value="Reset" id="reset" onClick="reset()">
+                Reset
+            </button>
+        </div>
+
+        <div class="body1" id="body1">
+            <div class="body-title1">
+                <h2>Output</h2>
+            </div>
+
+            <span id="span">Output generated over here...</span>
+
+            <div class="num1" id="nums1" style="display: none">
+                <p id="frame">Number of frames :</p>
+                <p id="reference">Order of pages :</p>
+                <p id="algo">Algorithm :</p>
+            </div>
+
+            <div id="box" class="box">
+                <span class="s1"></span>
+                <!-- <span class="s2"></span> -->
+                <span class="s3"></span>
+            </div>
+
+            <br />
+            <table
+                width="50%"
+                id="tab"
+                border="3px"
+                style="display: none; align-content: center"
+                class="w3-container w3-center w3-animate-opacity"
+            >
+                <tr id="req" style="background-color: #2ecc71">
+                    <td>Requests:</td>
+                </tr>
+            </table>
+
+            <div class="num n-left" id="nums" style="display: none">
+                <p class="p1 text-danger" id="faults">Page faults:</p>
+                <!-- <p id="faultRat">Page fault Ratio: </p> -->
+                <p class="text-danger" id="faultrate">Page fault Rate:</p>
+            </div>
+            <div class="num n-right" id="nums2" style="display: none">
+                <p class="text-success" id="hits">Page Hit:</p>
+                <p class="text-success" id="hitrate">Page Hit Rate:</p>
+            </div>
+        </div>
+
+        <script src="./../JS/particles.js"></script>
+        <script src="./../JS/app.js"></script>
+        <script type="text/javascript" src="script3.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

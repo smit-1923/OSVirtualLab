@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#particles-js {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url('https://www.cypherium.io/wp-content/uploads/2020/07/Home-Banner-Image.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.navbar-brand {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.navbar-brand:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 14%;
+  color: #fff;
+}
+
+.title h1 {
+  font-size: 3rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.page-title {
+  font-size: 3rem;
+  padding-bottom: 4%;
+}
+
+label {
+  font-size: 1.5rem;
+  padding-bottom: 2%;
+}
+
+.title h1:hover {
+  color: #007cba;
+  transition: color 0.2s;
+}
+#count-output {
+  font-size: 1.5rem;
+}
+
+.btn {
+  position: absolute;
+  left: 10%;
+}
+
+.btn a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.auto-generate {
+  position: absolute;
+  margin: 10px 0 0 750px;
+}
+
+.container p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.inputs input {
+  padding-left: 4px;
+  margin: 10px;
+}
+
+.printChart {
+  position: absolute;
+  left: 990px;
+  margin-top: 35px;
+  visibility: hidden;
+}
+
+input#inputHeadPos {
+  display: inline;
+  width: 50px;
+}
+
+canvas#canvas {
+  margin-top: 20px;
+}
+
+div.algorithm-input {
+  margin-bottom: 10px;
+}
+
+div.start-input div {
+  display: inline;
+}
+
+.btnVisualizeContainer {
+  margin-right: 20px;
+  position: absolute;
+  padding-left: 20px;
+}
+
+input#inputNumbers {
+  display: inline;
+  width: 200px;
+}
+
+div.pageContainer {
+  text-align: left;
+  padding: 2% 15% 3% 16%;
+  width: 90%;
+}
+
+div#errorMessage {
+  margin-top: 10px;
+}

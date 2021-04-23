@@ -1,0 +1,124 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://www.cypherium.io/wp-content/uploads/2020/07/Home-Banner-Image.jpg);
+  min-height: 100vh;
+  transition:  all 3s;
+}
+
+h4{
+  background-color: #515b5c;
+  bottom: -2%;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  padding: 3px;
+  position: absolute;
+  text-align: center;
+  width: 100%; height: 35px;
+}
+
+.card{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  height: 400px;
+  margin: 25px;
+  overflow: hidden;
+  position: relative;
+  width: 300px; 
+}
+
+.card img{
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.card:hover{
+  box-shadow: 15px 15px 10px rgba(0,0,0,0.7);
+}
+
+.card:hover img{
+  transform: scale(1.2);
+}
+
+.card:hover .details, .card:hover .details a{
+  transform: none;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.details{
+  align-items: center;
+  background-color: #515b5c;
+  bottom: 0; 
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  position: absolute;
+  padding: 10px 10px 5px;
+  transform: translateY(100%);
+  transition: all 0.8s;
+  width: 100%;
+}
+
+.details a{
+  display: inline-block;
+  margin-left: 15px;
+  transform: translateX(50px);
+  transition: all 0.3s;
+}
+
+.details h2{
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.details a:first-child{
+  transition-delay: 0.2s;
+}
+
+.details a:nth-child(2){
+  transition-delay: 0.4s;
+}
+
+.details a:nth-child(3){
+  transition-delay: 0.6s;
+}
+
+.fab, .fas{
+  color: black;
+}
+
+.fab:hover, .fas:hover{
+  color: white;
+}
+
+.one{
+  margin-top: 13%;
+}
+
+.social-media-list{
+  margin-bottom: 5px;
+}
+
+@media(max-width:360px){
+   .card{
+     flex-basis: 100%;
+     width: auto;
+   }
+
+   .details h2, .details a{
+     font-size: 12px;
+   }
+}

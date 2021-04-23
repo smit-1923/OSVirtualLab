@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elevator SCAN - Explanation</title>
+        <link rel="stylesheet" type="text/css" href="./../../css/style2.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+        <div id="particles-js">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a
+                    class="navbar-brand"
+                    href="./../../index.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Home</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="index_Disk.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Algorithms</a
+                >
+                <a
+                    class="navbar-brand"
+                    href="diskGraph.html"
+                    style="font-size: 20px; font-weight: 550"
+                    >Graph</a
+                >
+                <a
+                    class="navbar-brand ml-auto" target="_blank"
+                    href="https://geektech1717.blogspot.com/2020/05/scan-disk-scheduling-operating-system.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto" target="_blank"
+                    href="https://www.youtube.com/watch?v=xouo556RGiE&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=77"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarColor01"
+                    aria-controls="navbarColor01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <br />
+
+            <div class="title">
+                <h1 class="mb-5">CONCEPT - Elevator SCAN or SCAN Algorithm</h1>
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/ef-o5jV4Ib8?start=0&end=83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="btn col-md-8">
+                    <a
+                        class="btn btn-outline-primary col-md-4"
+                        href="disk_algo3.html"
+                        >Algorithm</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <div class="container">
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 ">
+                                <img src="./../assets/images/scan.jpg" alt="" class="radius-image img-fluid">
+                            </div>
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big">Elevator SCAN Algorithm</h3>
+                                
+                                <p class="mt-3">The elevator algorithm (also SCAN) is a disk-scheduling
+                                    algorithm to determine the motion of the disk's arm and head in
+                                    servicing read and write requests.</p>
+                                    
+                                <p class="mt-3">In SCAN algorithm the disk arm moves into a particular direction
+                                    and services the requests coming in its path and after reaching
+                                    the end of disk, it reverses its direction and again services
+                                    the request arriving in its path. So, this algorithm works as an
+                                    elevator and hence also known as elevator algorithm. As a
+                                    result, the requests at the midrange are serviced more and those
+                                    arriving behind the disk arm will have to wait.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big">Advantages: </h3>
+                                <ul class="w3l-lists mt-4">
+                                    <li><span class="fa fa-check" aria-hidden="true"></span>This algorithm is simple and easy to understand.</li>
+                                    <li><span class="fa fa-times" aria-hidden="true">SCAN algorithm have no starvation.</span></li>
+                                    <li><span class="fa fa-times" aria-hidden="true">This algorithm is better than FCFS Scheduling algorithm</span></li>
+                                    <br>
+                                <h3 class="title-big">DisAdvantages: </h3>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>More complex algorithm to implement.</li>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>This algorithm is not fair because it cause long waiting time
+                                        for the cylinders just visited by the head.</li>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>It causes the head to move till the end of the disk in this
+                                        way the requests arriving ahead of the arm position would get
+                                        immediate service but some other requests that arrive behind the
+                                        arm position will have to wait for the request to complete.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <img src="./../assets/images/scan2.png" alt="" class="radius-image img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <h2
+                class="dispthelay-3 text-dark font-weight-bold"
+                style="font-family: 'Roboto', sans-serif"
+            >
+                Algorithm-
+            </h2>
+            <hr class="my-4" />
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                1. Let Request array represents an array storing indexes of
+                tracks that have been requested in ascending order of their time
+                of arrival. ‘head’ is the position of disk head.
+                <br />
+                2. Let direction represents whether the head is moving towards
+                left or right.<br />
+                3. In the direction in which head is moving service all tracks
+                one by one.<br />
+                4. Calculate the absolute distance of the track from the
+                head.<br />
+                5. Increment the total seek count with this distance.<br />
+                6. Currently serviced track position now becomes the new head
+                position.<br />
+                7. Go to step 3 until we reach at one of the ends of the
+                disk.<br />
+                8. If we reach at the end of the disk reverse the direction and
+                go to step 2 until all tracks in request array have not been
+                serviced.<br />
+            </p>
+            <p class="text-dark font-weight-bold" style="font-size: 20px">
+                <span>>></span> Example :
+            </p>
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                <b>Input:</b><br />
+                Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}<br />
+                Initial head position = 50<br />
+                Direction = left (We are moving from right to left)<br />
+            </p>
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                <b>Output:</b><br />
+                Total number of seek operations = 226<br />
+                Seek Sequence is<br />
+                41 <br />
+                34 <br />
+                11 <br />
+                0 <br />
+                60 <br />
+                79 <br />
+                92 <br />
+                114 <br />
+                176
+                <br />
+            </p>
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                The following chart shows the sequence in which requested tracks
+                are serviced using SCAN.
+            </p>
+            <img
+                src="https://media.geeksforgeeks.org/wp-content/uploads/20190727175932/fcfs-2.jpg"
+            /><br /><br />
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                Therefore, the total seek count is calculated as:<br /><br />
+                = (50-41)+(41-34)+(34-11)<br />
+                +(11-0)+(60-0)+(79-60) <br />
+                +(92-79)+(114-92)+(176-114) <br />
+                = 226<br />
+            </p>
+
+            <hr class="my-4" />
+        </div>
+
+        <script src="./../../JS/particles.js"></script>
+        <script src="./../../JS/app.js"></script>
+    </body>
+</html>

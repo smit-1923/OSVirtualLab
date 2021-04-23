@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    <title>Operating System</title>
+
+    <link rel="stylesheet" href="./../../css/style-starter.css">
+
+
+    <link rel="stylesheet" type="text/css" href="./../../css/style2.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
+
+    <link href="//fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+        hr {
+            border: 1px solid #00458b;
+            border-radius: 25px;
+        }
+        .title{
+	        position: absolute;
+	        top: 20%;
+	        left: 13%;
+	        color: #fff;
+        }
+        .btn{
+            margin-top: 30%;
+            margin-left: 20%;
+        }
+    </style>
+
+</head>
+
+<body id="page-top" style="scroll-behavior: smooth; text-decoration: none; outline: none">
+    <div id="particles-js">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="./../../index.html" style="font-size: 20px; font-weight: 550">Home</a>
+            <a
+                    class="navbar-brand ml-auto" target="_blank"
+                    href="https://geektech1717.blogspot.com/2020/05/disk-scheduling-operating-system.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto" target="_blank"
+                    href="https://www.youtube.com/watch?v=9uoa_p8q47Y&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=74"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
+        </nav>
+        <div class="title">
+            <h1 class="mb-5">SOME BASIC TERMINOLOGIES OF DISK SCHEDULING</h1>
+            <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/OlqYzfPk8os" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="btn col-md-6">
+                <a class="btn btn-outline-primary col-md-5" href="index_Disk.html">Disk Scheduling</a>
+            </div>
+        </div>
+    </div>
+
+       
+
+        <section class="w3l-homeblock3">
+            <div class="midd-w3 py-5">
+                <div class="container py-lg-5 py-md-3">
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <img src="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/images/Chapter10/10_01_DiskMechanism.jpg" alt="" class="radius-image img-fluid">
+                        </div>
+                        <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                            <h3 class="title-big">Magnetic Disks</h3>
+                            <p class="mt-3">In modern computers, most of the secondary storage is in the form of magnetic disks.The basic structure of magnetic disk is depicted as beside:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="w3l-homeblock3">
+            <div class="midd-w3 py-5">
+                <div class="container py-lg-5 py-md-3">
+                    <div class="row">
+                        <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                            <h3 class="title-big">Why Disk Scheduling </h3>
+                            <p class="mt-3">As we know, a process needs two type of time, CPU time and IO time. For I/O, it requests the Operating system to access the disk.<br> However, the operating system must be fare enough to satisfy each request and at the same time, operating system
+                                must maintain the efficiency and speed of process execution.<br> So, Disk Scheduling can be defined as the techinique that operating system uses to schedule I/O requests arriving for the disk.</p>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <img src="./../assets/images/fourthsection.jpg" alt="" class="radius-image img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="w3l-homeblock3">
+            <div class="midd-w3 py-5">
+                <div class="container py-lg-5 py-md-3">
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <img src="./../assets/images/disk1.jpg" alt="" class="radius-image img-fluid">
+                        </div>
+                        <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                            <h3 class="title-big">Goals of Disk Scheduling</h3>
+                            <ul class="w3l-lists mt-4">
+                                <li><span class="fa fa-check" aria-hidden="true"></span>Fairness</li>
+                                <li><span class="fa fa-check" aria-hidden="true"></span>High throughout</li>
+                                <li><span class="fa fa-check" aria-hidden="true"></span>Minimal traveling head time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+        <!-- /homeblock2-->
+<section class="w3l-homeblock2 py-5" id="services">
+    <div class="container py-lg-5 py-md-4">
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            <div class="col-lg-2 col-sm-6 grids-feature">
+                <div class="area-box">
+                    <span class="fa"><img src="./../assets/images/seek.png" height="30px" width="30px"></span>
+                    <h4>Seek Time</h4>
+                    <p>Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 grids-feature mt-sm-0 mt-5">
+                <div class="area-box">
+                    <span class="fa"><img src="./../assets/images/rotation.png" height="30px" width="30px"></span>
+                    <h4>Rotational Latency</h4>
+                    <p>Rotational Latency is the time taken by the desired sector of disk to rotate into a position so that it can access the read/write heads.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 grids-feature mt-lg-0 mt-5">
+                <div class="area-box">
+                    <span class="fa"><img src="./../assets/images/transfer.png" height="30px" width="30px"></span>
+                    <h4>Transfer Time</h4>
+                    <p>Transfer time is the time to transfer the data. It depends on the rotating speed of the disk and number of bytes to be transferred.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6 grids-feature mt-lg-0 mt-5">
+                <div class="area-box">
+                    <span class="fa"><img src="./../assets/images/disk.png" height="30px" width="30px"></span>
+                    <h4>Disk Access Time</h4>
+                    <p>Disk Access Time = Seek Time + Rotational Latency + Transfer Time</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-12 grids-feature mt-lg-0 mt-5">
+                <div class="area-box">
+                    <span class="fa"><img src="./../assets/images/floppy.png" height="30px" width="30px"></span>
+                    <h4>Disk Response Time</h4>
+                    <p>Response Time is the average of time spent by a request waiting to perform its I/O operation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //homeblock2-->
+        
+<section class="w3l-homeblock3">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                    <h3 class="title-big">Disk Scheduling Algorithms</h3>
+                    <p class="mt-3">The list of various disks scheduling algorithm is given below. Each algorithm is carrying some advantages and disadvantages. <br> The limitation of each algorithm leads to the evolution of a new algorithm.</p>
+                    <ul class="w3l-lists mt-4">
+                        <li><span class="fa fa-check" aria-hidden="true"></span>FCFS scheduling algorithm</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>SSTF (shortest seek time first) algorithm</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>SCAN scheduling</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>C-SCAN scheduling</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>LOOK Scheduling</li>
+                        <li><span class="fa fa-check" aria-hidden="true"></span>C-LOOK scheduling</li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-6 ">
+                    <img src="./../assets/images/thirdsection.jpg" alt="" class="radius-image img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+<script src="./../../JS/particles.js"></script>
+<script src="./../../JS/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
