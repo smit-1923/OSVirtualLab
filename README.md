@@ -44,7 +44,7 @@ Likewise, these all six algorithms and their theory are implemented.
 
 <img src="https://user-images.githubusercontent.com/68073132/115821015-983ce080-a41f-11eb-94c1-d7551c4b4c50.png" height="550">
 
-## Team Members
+## Developed By
 1) [Smit Sakariya](https://www.linkedin.com/in/smitsakariya/)   
 2) [Dhruvil Soni](https://www.linkedin.com/in/dhruvil-soni/)  
 3) [Sagar Narsingani](https://www.linkedin.com/in/sagarnarsingani/)  
